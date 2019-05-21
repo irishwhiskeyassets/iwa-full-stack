@@ -72,8 +72,9 @@ app.post('/purchase', function (req, res) {
     };
 
     var contextObject = {
-        variable1: 'value1',
-        variable2: 'value2'
+        bundle: bundle,
+        cask: cask,
+        price: price
       };
 
     nodemailerMailgun.sendMail({
@@ -81,7 +82,6 @@ app.post('/purchase', function (req, res) {
         to: email,
         subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
         'h:Reply-To': process.env.companyEmail,
-        //html: '<p>Thank you for ordering the ' + bundle + ' bundle. This is ' + cask+ ' casks worth €' + price+ '.</p>',
         template: {
             name: 'email.hbs',
             engine: 'handlebars',
