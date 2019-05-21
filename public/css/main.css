@@ -910,3 +910,63 @@ h5{
     }
 }
 
+/* Purchasing page */
+
+.purchase-form-container{
+    padding:5% 35%;
+    color:var(--primary-color);
+    font-family:'Lato', sans-serif;
+    letter-spacing:.5px !important;
+}
+
+.purchase-form input{
+    background:none;
+    padding:12px;
+    border: 1px #353535 solid;
+    border-radius:6px;
+    color:white;
+    margin:10px 0;
+    font-size:12pt;
+    transition:.2s ease;
+    background:rgba(255, 255, 255, .02);
+    box-sizing:border-box;
+    font-family:'Lato', sans-serif !important;
+    letter-spacing:.5px;
+}
+
+.name-group {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:12px;
+}
+
+.purchase-form input[type="submit"]{
+    background:var(--cta-bg);
+    color:var(--cta-font);
+    cursor:pointer;
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform:uppercase;
+    padding:15px;
+    border:none;
+}
+
+.purchase-form input[type="submit"]:hover{
+    background:var(--cta-bg-hover);
+    transition:.2s ease;
+}
+
+.purchase-form input[type="text"]{
+    width:100%;
+    margin:6px 0;
+}
+
+.purchase-form input:focus{
+    outline:none;
+    border: 1px var(--primary-color) solid;
+    transition:.2s ease;
+}
+
+
+
