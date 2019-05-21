@@ -30,6 +30,7 @@ app.get('/purchase', function (req, res) {
 
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
+var handlebars = require('handlebars');
 
 
 var auth = {
@@ -70,12 +71,22 @@ app.post('/purchase', function (req, res) {
         price = '59,995';
     };
 
+    var contextObject = {
+        variable1: 'value1',
+        variable2: 'value2'
+      };
+
     nodemailerMailgun.sendMail({
         from: process.env.companyEmail,
         to: email,
         subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
         'h:Reply-To': process.env.companyEmail,
-        html: '<p>Thank you for ordering the ' + bundle + ' bundle. This is ' + cask+ ' casks worth €' + price+ '.</p>',
+        //html: '<p>Thank you for ordering the ' + bundle + ' bundle. This is ' + cask+ ' casks worth €' + price+ '.</p>',
+        template: {
+            name: 'email.hbs',
+            engine: 'handlebars',
+            context: contextObject
+          }
     }, function (err, info) {
         if (err) {
             console.log('Error: ' + err);
