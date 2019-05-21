@@ -72,7 +72,21 @@ app.post('/purchase', function (req, res) {
         price = '59,995';
     };
 
-    var contextObject = {
+    var contextObjectCustomer = {
+        firstName: firstName,
+        bundle: bundle,
+        cask: cask,
+        price: price
+      };
+
+      var contextObjectBusiness = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        country: country,
+        city: city,
+        address1: address1,
+        address2: address2,
         bundle: bundle,
         cask: cask,
         price: price
@@ -84,9 +98,9 @@ app.post('/purchase', function (req, res) {
         subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
         'h:Reply-To': process.env.companyEmail,
         template: {
-            name: 'email.hbs',
+            name: 'emailCustomer.hbs',
             engine: 'handlebars',
-            context: contextObject
+            context: contextObjectCustomer
           }
     }, function (err, info) {
         if (err) {
@@ -96,9 +110,13 @@ app.post('/purchase', function (req, res) {
 
     nodemailerMailgun.sendMail({
         from: process.env.companyEmail,
-        to: [{address: process.env.businessOne}, {address: process.env.businessTwo}],
+        to: [{address: process.env.businessOne}, {address: process.env.businessTwo}, {address: process.env.businessThree}],
         subject: 'New Order Enquiry',
-        html: '<p>There is a new order enquiry for the ' + bundle + ' bundle. This is ' + cask + ' casks worth €' + price+ '. The details of the order are: First Name: ' + firstName + ' ' + lastName + ', Email: ' + email + ', Address: ' + address1 + ' ' + address2 + ' ' + city + ' ' + country + '.</p>',
+        template: {
+            name: 'emailBusiness.hbs',
+            engine: 'handlebars',
+            context: contextObjectBusiness
+          }
     }, function (err, info) {
         if (err) {
             console.log('Error: ' + err);
