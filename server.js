@@ -84,7 +84,7 @@ app.post('/purchase', function (req, res) {
 
     nodemailerMailgun.sendMail({
         from: process.env.companyEmail,
-        to: [{address:'conorjdeegan@gmail.com'}, {address:'cdeegan@rawcondition.com'}],
+        to: [{address: process.env.businessOne}, {address: process.env.businessTwo}],
         subject: 'New Order Enquiry',
         html: '<p>There is a new order enquiry for the ' + bundle + ' bundle. This is ' + cask + ' casks worth €' + price+ '. The details of the order are: First Name: ' + firstName + ' ' + lastName + ', Email: ' + email + ', Address: ' + address1 + ' ' + address2 + ' ' + city + ' ' + country + '.</p>',
     }, function (err, info) {
