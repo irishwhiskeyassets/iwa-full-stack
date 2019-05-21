@@ -30,46 +30,81 @@ app.get('/purchase', function (req, res) {
 
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
+var handlebars = require('handlebars');
 
-// This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
+
 var auth = {
     auth: {
         
+        api_key: process.env.api_key,
+        domain: process.env.domain
     },
-    proxy: 'http://user:pass@localhost:8080' // optional proxy, default is false
 }
 
 var nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
-nodemailerMailgun.sendMail({
-    from: 'myemail@example.com',
-    to: 'recipient@domain.com', // An array if you have multiple recipients.
-    cc: 'second@domain.com',
-    bcc: 'secretagent@company.gov',
-    subject: 'Hey you, awesome!',
-    'h:Reply-To': 'reply2this@company.com',
-    //You can use "html:" to send HTML email content. It's magic!
-    html: '<b>Wow Big powerful letters</b>',
-    //You can use "text:" to send plain-text content. It's oldschool!
-    text: 'Mailgun rocks, pow pow!'
-}, function (err, info) {
-    if (err) {
-        console.log('Error: ' + err);
-    } else {
-        console.log('Response: ' + info);
-    }
-});
-
 app.post('/purchase', function (req, res) {
     var bundle = req.body.bundle;
+    var email = req.body.email;
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var country = req.body.country;
     var city = req.body.city;
     var address1 = req.body.address1;
     var address2 = req.body.address2;
+    var cask;
+    var price;
 
-    console.log(bundle + firstName + lastName + country + city + address1 + address2);
+    if (bundle === 'bronze') {
+        cask = '2';
+        price = '5,995';
+    } else if (bundle === 'silver') {
+        cask = '5';
+        price = '13,995';
+    } else if (bundle === 'gold') {
+        cask = '10';
+        price = '26,995';
+    } else if (bundle === 'diamond') {
+        cask = '15';
+        price = '38,495';
+    } else if (bundle === 'platinum') {
+        cask = '25';
+        price = '59,995';
+    };
+
+    var contextObject = {
+        bundle: bundle,
+        cask: cask,
+        price: price
+      };
+
+    nodemailerMailgun.sendMail({
+        from: process.env.companyEmail,
+        to: email,
+        subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
+        'h:Reply-To': process.env.companyEmail,
+        template: {
+            name: 'email.hbs',
+            engine: 'handlebars',
+            context: contextObject
+          }
+    }, function (err, info) {
+        if (err) {
+            console.log('Error: ' + err);
+        }
+    });
+
+    nodemailerMailgun.sendMail({
+        from: process.env.companyEmail,
+        to: [{address: process.env.businessOne}, {address: process.env.businessTwo}],
+        subject: 'New Order Enquiry',
+        html: '<p>There is a new order enquiry for the ' + bundle + ' bundle. This is ' + cask + ' casks worth €' + price+ '. The details of the order are: First Name: ' + firstName + ' ' + lastName + ', Email: ' + email + ', Address: ' + address1 + ' ' + address2 + ' ' + city + ' ' + country + '.</p>',
+    }, function (err, info) {
+        if (err) {
+            console.log('Error: ' + err);
+        }
+    });
+
     res.json("got it")
 })
 app.listen(port, () => console.log(`Server running on port ${port}`));
