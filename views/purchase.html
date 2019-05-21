@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Irish Whiskey Assets — Invest in Irish Whiskey</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Libre+Baskerville" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
 </head>
@@ -53,26 +54,66 @@
 	<div class="process-hero">
 		<h3>Next steps</h3>
 		<h1>Purchase Casks</h1>
-		<p>Purchasing your casks is very straightforward. Simply complete the short application form, upload your photo identification and select your preferred Cask Bundle. We will then be in touch to arrange a secure bank transfer. Following your purchase, you will receive a receipt and the step by step process will begin. All Cask Bundles include the casks, spirit, storage and insurance for five years. There are no hidden charges or fees.</p>
-		<p>If you would like to make a purchase but the Cask Bundles are not ideal, please email <strong><a href='mailto:founder@irishwhiskeyassets.com'>founder@irishwhiskeyassets.com</a></strong></p>
+		<p>Purchasing your casks is very straightforward. Simply complete the short application form, upload
+			your photo identification and select your preferred Cask Bundle. We will then be in touch to
+			arrange a secure bank transfer. Following your purchase, you will receive a receipt and the step
+			by step process will begin. All Cask Bundles include the casks, spirit, storage and insurance
+			for five years. There are no hidden charges or fees.</p>
+		<p>If you would like to make a purchase but the Cask Bundles are not ideal, please email <strong><a
+					href='mailto:founder@irishwhiskeyassets.com'>founder@irishwhiskeyassets.com</a></strong>
+		</p>
 	</div>
 
 	<!-- Purchasing form -->
 	<div class="purchase-form-container">
 		<div>
-			<form class="purchase-form" method="POST" action="/purchase">
-				<div class="bundle-button">
-					<div>
-						Wow
+			<!-- <form class="purchase-form" method="POST" action="/purchase"> -->
+			<form class="purchase-form">
+				<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
+					<div class="checkmark-container">
+						<span class="checkmark"><span class="checkmarkInner"></span></span>
+						<h4>Bronze</h4>
 					</div>
-					<h1>Hey</h1>
-					<h2>There</h2>
+					<h4 class="bundle-casks">2 casks</h4>
+					<h4 class="bundle-price">€5995</h4>
+				</div> 
+				<div class="bundle-button" onclick="radioClicked(event)" id="silver">
+					<div class="checkmark-container">
+						<span class="checkmark"></span>
+						<h4>Silver</h4>
+					</div>
+					<h4 class="bundle-casks">5 casks</h4>
+					<h4 class="bundle-price">€13995</h4>
 				</div>
-				<input type="radio" name="bundle" value="bronze">Bronze<br>
-				<input type="radio" name="bundle" value="silver">Silver<br>
-				<input type="radio" name="bundle" value="gold">Gold<br>  
-				<input type="radio" name="bundle" value="diamond">Diamond<br>  
-				<input type="radio" name="bundle" value="platinum">Platinum<br>  
+				<div class="bundle-button" onclick="radioClicked(event)" id="gold">
+					<div class="checkmark-container">
+						<span class="checkmark"></span>
+						<h4>Gold</h4>
+					</div>
+					<h4 class="bundle-casks">10 casks</h4>
+					<h4 class="bundle-price">€26995</h4>
+				</div>
+				<div class="bundle-button" onclick="radioClicked(event)" id="diamond">
+					<div class="checkmark-container">
+						<span class="checkmark"></span>
+						<h4>Diamond</h4>
+					</div>
+					<h4 class="bundle-casks">15 casks</h4>
+					<h4 class="bundle-price">€38495</h4>
+				</div>
+				<div class="bundle-button" onclick="radioClicked(event)" id="platinum">
+					<div class="checkmark-container">
+						<span class="checkmark"></span>
+						<h4>Platinum</h4>
+					</div>
+					<h4 class="bundle-casks">25 casks</h4>
+					<h4 class="bundle-price">€59995</h4>
+				</div>
+				<input type="radio" name="bundle" value="bronze" required>
+				<input type="radio" name="bundle" value="silver" required>
+				<input type="radio" name="bundle" value="gold" required>
+				<input type="radio" name="bundle" value="diamond" required>
+				<input type="radio" name="bundle" value="platinum" required>
 				<div class="name-group">
 					<input type='text' placeholder="First name" name="firstName">
 					<input type='text' placeholder="Last name" name="lastName">

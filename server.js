@@ -34,7 +34,7 @@ var mg = require('nodemailer-mailgun-transport');
 // This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
 var auth = {
     auth: {
-
+        
     },
     proxy: 'http://user:pass@localhost:8080' // optional proxy, default is false
 }

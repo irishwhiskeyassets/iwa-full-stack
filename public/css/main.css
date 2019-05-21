@@ -962,9 +962,70 @@ h5{
     margin:6px 0;
 }
 
+.purchase-form input[type="email"]{
+    width:100%;
+    margin:6px 0;
+}
+
 .purchase-form input:focus{
     outline:none;
     border: 1px var(--primary-color) solid;
     transition:.2s ease;
 }
 
+.purchase-form input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+.bundle-button{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px #353535 solid;
+    padding:20px;
+    border-radius:8px;
+    margin:10px 0;
+    transition:.2s ease;
+}
+
+.bundle-button:hover{
+    cursor:pointer;
+    background:rgba(255, 255, 255, .02);
+    transition:.2s ease;
+}
+
+.bundle-button h4{
+    font-size:var(--font-size-default);
+}
+
+.bundle-price{
+    text-align: right;
+}
+
+.bundle-casks{
+    text-align: center;
+}
+
+
+.checkmark{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:12px;
+    width:12px;
+    background:#353535;
+    margin-right:8px;
+    border-radius:45px;
+    box-sizing:border-box;
+}
+
+.checkmark-container{
+    display:flex;
+    align-items: center;
+}
+
+.selectedBundle{
+    background:red !important;
+}
