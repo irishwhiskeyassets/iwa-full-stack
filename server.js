@@ -71,10 +71,10 @@ app.post('/purchase', function (req, res) {
     };
 
     nodemailerMailgun.sendMail({
-        from: 'company@gmail.com',
+        from: process.env.companyEmail,
         to: email,
         subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
-        'h:Reply-To': 'company@gmail.com',
+        'h:Reply-To': process.env.companyEmail,
         html: '<p>Thank you for ordering the ' + bundle + ' bundle. This is ' + cask+ ' casks worth €' + price+ '.</p>',
     }, function (err, info) {
         if (err) {
@@ -83,7 +83,7 @@ app.post('/purchase', function (req, res) {
     });
 
     nodemailerMailgun.sendMail({
-        from: 'company@gmail.com',
+        from: process.env.companyEmail,
         to: 'cdeegan@rawcondition.com',
         subject: 'New Order Enquiry',
         html: '<p>There is a new order enquiry for the ' + bundle + ' bundle. This is ' + cask + ' casks worth €' + price+ '. The details of the order are: First Name: ' + firstName + ' ' + lastName + ', Email: ' + email + ', Address: ' + address1 + ' ' + address2 + ' ' + city + ' ' + country + '.</p>',
