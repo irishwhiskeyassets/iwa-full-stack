@@ -1,0 +1,23 @@
+{
+  "name": "iwa-full-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conor-deegan/iwa-full-stack.git"
+  },
+  "author": "Conor Deegan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/conor-deegan/iwa-full-stack/issues"
+  },
+  "homepage": "https://github.com/conor-deegan/iwa-full-stack#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.0"
+  }
+}
