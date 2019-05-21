@@ -66,12 +66,13 @@
 
 	<!-- Purchasing form -->
 	<div class="purchase-form-container">
-		<div>
-			<!-- <form class="purchase-form" method="POST" action="/purchase"> -->
-			<form class="purchase-form">
+		<div>	
+			<h5>Please select a bundle and fill in the following form:</h5>
+			<form class="purchase-form" method="POST" action="/purchase">
+			<!-- <form class="purchase-form"> -->
 				<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
 					<div class="checkmark-container">
-						<span class="checkmark"><span class="checkmarkInner"></span></span>
+						<span class="checkmark" id="bronzeCheckmark"></span>
 						<h4>Bronze</h4>
 					</div>
 					<h4 class="bundle-casks">2 casks</h4>
@@ -79,7 +80,7 @@
 				</div> 
 				<div class="bundle-button" onclick="radioClicked(event)" id="silver">
 					<div class="checkmark-container">
-						<span class="checkmark"></span>
+						<span class="checkmark" id="silverCheckmark"></span>
 						<h4>Silver</h4>
 					</div>
 					<h4 class="bundle-casks">5 casks</h4>
@@ -87,7 +88,7 @@
 				</div>
 				<div class="bundle-button" onclick="radioClicked(event)" id="gold">
 					<div class="checkmark-container">
-						<span class="checkmark"></span>
+						<span class="checkmark" id="goldCheckmark"></span>
 						<h4>Gold</h4>
 					</div>
 					<h4 class="bundle-casks">10 casks</h4>
@@ -95,7 +96,7 @@
 				</div>
 				<div class="bundle-button" onclick="radioClicked(event)" id="diamond">
 					<div class="checkmark-container">
-						<span class="checkmark"></span>
+						<span class="checkmark" id="diamondCheckmark"></span>
 						<h4>Diamond</h4>
 					</div>
 					<h4 class="bundle-casks">15 casks</h4>
@@ -103,17 +104,17 @@
 				</div>
 				<div class="bundle-button" onclick="radioClicked(event)" id="platinum">
 					<div class="checkmark-container">
-						<span class="checkmark"></span>
+						<span class="checkmark" id="platinumCheckmark"></span>
 						<h4>Platinum</h4>
 					</div>
 					<h4 class="bundle-casks">25 casks</h4>
 					<h4 class="bundle-price">€59995</h4>
 				</div>
-				<input type="radio" name="bundle" value="bronze" required>
-				<input type="radio" name="bundle" value="silver" required>
-				<input type="radio" name="bundle" value="gold" required>
-				<input type="radio" name="bundle" value="diamond" required>
-				<input type="radio" name="bundle" value="platinum" required>
+				<input type="radio" name="bundle" value="bronze">
+				<input type="radio" name="bundle" value="silver">
+				<input type="radio" name="bundle" value="gold">
+				<input type="radio" name="bundle" value="diamond">
+				<input type="radio" name="bundle" value="platinum">
 				<div class="name-group">
 					<input type='text' placeholder="First name" name="firstName">
 					<input type='text' placeholder="Last name" name="lastName">

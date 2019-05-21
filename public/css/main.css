@@ -1013,8 +1013,8 @@ h5{
     display:flex;
     justify-content: center;
     align-items: center;
-    height:12px;
-    width:12px;
+    height:10px;
+    width:10px;
     background:#353535;
     margin-right:8px;
     border-radius:45px;
@@ -1027,5 +1027,15 @@ h5{
 }
 
 .selectedBundle{
-    background:red !important;
+    border:1px var(--primary-color) solid !important;
+    background:rgba(255, 255, 255, .05);
+}
+
+.selectedBundle:hover{
+    background:rgba(255, 255, 255, .05);
+}
+
+.selectedCheckmark{
+    background:var(--primary-color);
+    transition:.2s ease;
 }

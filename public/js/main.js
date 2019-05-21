@@ -26,34 +26,36 @@ function radioClicked(event){
         case 'bronze':
             $("#" + bundleClicked).addClass("selectedBundle");
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
+            $('span').removeClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
             break;
 
         case 'silver':
             $("#" + bundleClicked).addClass("selectedBundle");
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
-            $("#option-2").addClass("active");
-            $("#option-2").siblings().removeClass("active");
-            interest = 1.01;
-            margin = 0.05;
-            setResults();
+            $('span').removeClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
             break;
 
         case 'gold':
             $("#" + bundleClicked).addClass("selectedBundle");
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
-            $("#option-3").addClass("active");
-            $("#option-3").siblings().removeClass("active");
-            interest = 1.01;
-            margin = 0.08;
-            setResults();
+            $('span').removeClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
             break;
 
         case 'diamond':
             $("#" + bundleClicked).addClass("selectedBundle");
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
-            $("#option-4").addClass("active");
-            $("#option-4").siblings().removeClass("active");
-            setResults();
+            $('span').removeClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
+            break;
+        
+        case 'platinum':
+            $("#" + bundleClicked).addClass("selectedBundle");
+            $("#" + bundleClicked).siblings().removeClass("selectedBundle");
+            $('span').removeClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
             break;
     }
 }
