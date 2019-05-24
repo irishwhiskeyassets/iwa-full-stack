@@ -73,7 +73,7 @@ formRoutes.route('/purchase').post(function (req, res) {
         subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
         'h:Reply-To': process.env.companyEmail,
         template: {
-            name: 'emailCustomer.hbs',
+            name: 'emailService/emailCustomer.hbs',
             engine: 'handlebars',
             context: contextObjectCustomer
           }
@@ -88,7 +88,7 @@ formRoutes.route('/purchase').post(function (req, res) {
         to: [{address: process.env.businessOne}, {address: process.env.businessTwo}, {address: process.env.businessThree}],
         subject: 'New Order Enquiry',
         template: {
-            name: 'emailBusiness.hbs',
+            name: 'emailService/emailBusiness.hbs',
             engine: 'handlebars',
             context: contextObjectBusiness
           }
