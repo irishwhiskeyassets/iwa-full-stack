@@ -28,6 +28,7 @@ function radioClicked(event){
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
             $('span').removeClass("selectedCheckmark");
             $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Radio').prop("checked", true);
             break;
 
         case 'silver':
@@ -35,6 +36,7 @@ function radioClicked(event){
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
             $('span').removeClass("selectedCheckmark");
             $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Radio').prop("checked", true);
             break;
 
         case 'gold':
@@ -42,6 +44,7 @@ function radioClicked(event){
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
             $('span').removeClass("selectedCheckmark");
             $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Radio').prop("checked", true);
             break;
 
         case 'diamond':
@@ -49,6 +52,7 @@ function radioClicked(event){
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
             $('span').removeClass("selectedCheckmark");
             $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Radio').prop("checked", true);
             break;
         
         case 'platinum':
@@ -56,6 +60,7 @@ function radioClicked(event){
             $("#" + bundleClicked).siblings().removeClass("selectedBundle");
             $('span').removeClass("selectedCheckmark");
             $("#" + bundleClicked + 'Checkmark').addClass("selectedCheckmark");
+            $("#" + bundleClicked + 'Radio').prop("checked", true);
             break;
     }
 }
