@@ -65,4 +65,29 @@ function radioClicked(event){
     }
 }
 
+submitButton.addEventListener('click', function (event) {
+    if(validateForm()){
+        console.log('Good form');
+    } else {
+        console.log('Bad form');
+    }
+})
 
+
+
+function validateForm(){
+    valid = true;
+    $('input[type="text"]').each(function(){
+        if($(this).val() == ''){
+            errorMessage.style.display = 'block';
+            return false;
+        }
+    })
+
+    if(!$('input[type="radio"]').is(':checked')) { 
+        errorMessage.style.display = 'block';
+        return false;
+    }
+
+return valid;
+}

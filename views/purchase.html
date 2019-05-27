@@ -68,7 +68,7 @@
 	<div class="purchase-form-container">
 		<div>	
 			<h5>Please select a bundle and fill in the following form:</h5>
-			<form class="purchase-form" method="POST" action="/api/form/purchase">
+			<form class="purchase-form" id="purchaseForm" method="POST" action="/api/form/purchase">
 			<!-- <form class="purchase-form"> -->
 				<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
 					<div class="checkmark-container">
@@ -126,7 +126,9 @@
 				<input type='text' placeholder="Address line 2" name="address2">
 				<input type="checkbox" name="terms" required> I have read and agree to the Terms & Conditions<br>
 				<input type="checkbox" name="privacy" required> I have read and understand the Privacy Policy<br>
-				<input type="submit" value="Send Request">
+				<!-- <input type="submit" value="Send Request"> -->
+				<div id="errorMessage">Please make sure you have selected a bundle and that all the fields have been completed.</div>
+				<button id="submitButton" class="submit-button" type="button">Send Request</button>
 			</form>
 		</div>
 	</div>
