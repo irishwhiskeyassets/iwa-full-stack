@@ -3,10 +3,10 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require("body-parser");
+const formRoutes = require("./routes/api/formRouting");
+const pageRoutes = require("./routes/api/pageRouting");
 const port = process.env.PORT || 5000;
 require('dotenv').config();
-
-// TRY REAK UP INTO MODULAR FILES FOR EACH ASPECT 
 
 app.use(
     bodyParser.urlencoded({
@@ -20,110 +20,8 @@ app.use(express.static("public"));
 
 app.use(express.static(path.join(__dirname, "views")));
 
-app.get('/how-it-works', function (req, res) {
-    res.sendFile(path.join(__dirname + '/views' + '/how-it-works.html'));
-});
+app.use('/api/form', formRoutes);
 
-app.get('/purchase', function (req, res) {
-    res.sendFile(path.join(__dirname + '/views' + '/purchase.html'));
-});
-
-var nodemailer = require('nodemailer');
-var mg = require('nodemailer-mailgun-transport');
-var handlebars = require('handlebars');
-
-
-var auth = {
-    auth: {
-        
-        api_key: process.env.api_key,
-        domain: process.env.domain
-    },
-}
-
-var nodemailerMailgun = nodemailer.createTransport(mg(auth));
-
-app.post('/purchase', function (req, res) {
-    var bundle = req.body.bundle;
-    var email = req.body.email;
-    var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
-    var country = req.body.country;
-    var city = req.body.city;
-    var address1 = req.body.address1;
-    var address2 = req.body.address2;
-    var cask;
-    var price;
-
-    if (bundle === 'bronze') {
-        cask = '2';
-        price = '5,995';
-    } else if (bundle === 'silver') {
-        cask = '5';
-        price = '13,995';
-    } else if (bundle === 'gold') {
-        cask = '10';
-        price = '26,995';
-    } else if (bundle === 'diamond') {
-        cask = '15';
-        price = '38,495';
-    } else if (bundle === 'platinum') {
-        cask = '25';
-        price = '59,995';
-    };
-
-    var contextObjectCustomer = {
-        firstName: firstName,
-        bundle: bundle,
-        cask: cask,
-        price: price
-      };
-
-      var contextObjectBusiness = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        country: country,
-        city: city,
-        address1: address1,
-        address2: address2,
-        bundle: bundle,
-        cask: cask,
-        price: price
-      };
-
-    nodemailerMailgun.sendMail({
-        from: process.env.companyEmail,
-        to: email,
-        subject: 'Whiskey Compnay - Hi ' + firstName + ', thanks for your order.',
-        'h:Reply-To': process.env.companyEmail,
-        template: {
-            name: 'emailCustomer.hbs',
-            engine: 'handlebars',
-            context: contextObjectCustomer
-          }
-    }, function (err, info) {
-        if (err) {
-            console.log('Error: ' + err);
-        }
-    });
-
-    nodemailerMailgun.sendMail({
-        from: process.env.companyEmail,
-        to: [{address: process.env.businessOne}, {address: process.env.businessTwo}, {address: process.env.businessThree}],
-        subject: 'New Order Enquiry',
-        template: {
-            name: 'emailBusiness.hbs',
-            engine: 'handlebars',
-            context: contextObjectBusiness
-          }
-    }, function (err, info) {
-        if (err) {
-            console.log('Error: ' + err);
-        }
-    });
-
-    res.json("got it")
-})
+app.use('/', pageRoutes);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
