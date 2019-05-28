@@ -934,6 +934,11 @@ h5{
     letter-spacing:.5px;
 }
 
+.purchase-form a{
+    color:var(--cta-bg-hover);
+    text-decoration:underline !important;
+}
+
 .name-group {
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -974,6 +979,10 @@ h5{
 .submit-button:hover{
     background:var(--cta-bg-hover);
     transition:.2s ease;
+}
+
+.submit-button:focus{
+    outline:none;
 }
 
 .purchase-form input[type="text"]{
@@ -1069,6 +1078,77 @@ h5{
     display:none;
     animation: fadeIn .2s;
 }
+
+.checkContainer:first-of-type{
+    margin-top:15px;
+}
+
+.checkContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight:lighter;
+  }
+
+  .checkContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmarkBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border-radius:3px;
+  }
+
+  /* On mouse-over, add a grey background color */
+.checkContainer:hover input ~ .checkmarkBox {
+    background-color: #f4f4f4;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+.checkContainer input:checked ~ .checkmarkBox {
+    background-color: var(--cta-bg);
+    transition:.2s ease;
+  }
+
+  .checkmarkBox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkContainer input:checked ~ .checkmarkBox:after {
+    display: block;
+  }
+
+  .checkContainer .checkmarkBox:after {
+    left: 6.5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--cta-font);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
 
 @keyframes fadeIn{
     from{

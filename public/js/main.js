@@ -66,28 +66,12 @@ function radioClicked(event){
 }
 
 submitButton.addEventListener('click', function (event) {
-    if(validateForm()){
-        console.log('Good form');
+    var form = document.getElementsByTagName('form');
+
+    if (!form[0].checkValidity()) {
+        errorMessage.style.display = 'block';
     } else {
-        console.log('Bad form');
-    }
+        purchaseForm.submit();
+    } 
 })
 
-
-
-function validateForm(){
-    valid = true;
-    $('input[type="text"]').each(function(){
-        if($(this).val() == ''){
-            errorMessage.style.display = 'block';
-            return false;
-        }
-    })
-
-    if(!$('input[type="radio"]').is(':checked')) { 
-        errorMessage.style.display = 'block';
-        return false;
-    }
-
-return valid;
-}

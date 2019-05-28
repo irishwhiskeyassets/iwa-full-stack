@@ -116,18 +116,26 @@
 				<input type="radio" name="bundle" value="diamond" id="diamondRadio" required>
 				<input type="radio" name="bundle" value="platinum" id="platinumRadio" required>
 				<div class="name-group">
-					<input type='text' placeholder="First name" name="firstName">
-					<input type='text' placeholder="Last name" name="lastName">
+					<input type='text' placeholder="First name" name="firstName" required>
+					<input type='text' placeholder="Last name" name="lastName" required>
 				</div>
-				<input type='email' placeholder="Email" name="email">
-				<input type='text' placeholder="Country" name="country">
-				<input type='text' placeholder="City" name="city">
-				<input type='text' placeholder="Address line 1" name="address1">
+				<input type='email' placeholder="Email" name="email" id="emailField" required>
+				<input type='text' placeholder="Country" name="country" required>
+				<input type='text' placeholder="City" name="city" required>
+				<input type='text' placeholder="Address line 1" name="address1" required>
 				<input type='text' placeholder="Address line 2" name="address2">
-				<input type="checkbox" name="terms" required> I have read and agree to the Terms & Conditions<br>
-				<input type="checkbox" name="privacy" required> I have read and understand the Privacy Policy<br>
+				<!-- <input type="checkbox" name="terms" required> </a> -->
+				<!-- <input type="checkbox" name="privacy" required> </a> -->
+				<label class="checkContainer">I have read and agree to the <a href='/terms'>Terms & Conditions</a>
+					<input type="checkbox" name="terms" required>
+					<span class="checkmarkBox"></span>
+				</label><br>
+				<label class="checkContainer">I have read and understand the <a href='/privacy'>Privacy Policy</a>
+					<input type="checkbox" name="privacy" required>
+					<span class="checkmarkBox"></span>
+				</label>
 				<!-- <input type="submit" value="Send Request"> -->
-				<div id="errorMessage">Please make sure you have selected a bundle and that all the fields have been completed.</div>
+				<div id="errorMessage">Please make sure you have selected a bundle and that all the fields have been completed correctly.</div>
 				<button id="submitButton" class="submit-button" type="button">Send Request</button>
 			</form>
 		</div>
