@@ -68,7 +68,7 @@ formRoutes.route('/purchase').post(function (req, res) {
       };
 
     nodemailerMailgun.sendMail({
-        from: process.env.companyEmail,
+        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
         to: email,
         subject: "Dear " + firstName + ", here's your cask order summary",
         'h:Reply-To': process.env.companyEmail,
@@ -84,7 +84,7 @@ formRoutes.route('/purchase').post(function (req, res) {
     });
 
     nodemailerMailgun.sendMail({
-        from: process.env.companyEmail,
+        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
         to: [{address: process.env.businessOne}, {address: process.env.businessTwo}, {address: process.env.businessThree}],
         subject: 'New Order Enquiry',
         template: {
