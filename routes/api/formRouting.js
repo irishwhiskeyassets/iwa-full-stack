@@ -70,7 +70,7 @@ formRoutes.route('/purchase').post(function (req, res) {
     nodemailerMailgun.sendMail({
         from: process.env.companyEmail,
         to: email,
-        subject: 'Irish Whiskey Assets - Hi ' + firstName + ', complete your order.',
+        subject: "Dear " + firstName + ", here's your cask order summary",
         'h:Reply-To': process.env.companyEmail,
         template: {
             name: 'emailService/emailCustomer.hbs',
