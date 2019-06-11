@@ -31,19 +31,19 @@ formRoutes.route('/purchase').post(function (req, res) {
     var cask;
     var price;
 
-    if (bundle === 'bronze') {
+    if (bundle === 'Bronze') {
         cask = '2';
         price = '5,995';
-    } else if (bundle === 'silver') {
+    } else if (bundle === 'Silver') {
         cask = '5';
         price = '13,995';
-    } else if (bundle === 'gold') {
+    } else if (bundle === 'Gold') {
         cask = '10';
         price = '26,995';
-    } else if (bundle === 'diamond') {
+    } else if (bundle === 'Diamond') {
         cask = '15';
         price = '38,495';
-    } else if (bundle === 'platinum') {
+    } else if (bundle === 'Platinum') {
         cask = '25';
         price = '59,995';
     };
