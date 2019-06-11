@@ -1219,3 +1219,7 @@ h5{
 .selling-body{
     padding:6% 15% 10% 15%;
 }
+
+#imageURL {
+    display: none;
+}

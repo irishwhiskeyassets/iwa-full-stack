@@ -27,6 +27,7 @@ formRoutes.route('/purchase').post(function (req, res) {
     var city = req.body.city;
     var address1 = req.body.address1;
     var address2 = req.body.address2;
+    var imageUrlOnS3 = req.body.imageURL
     var cask;
     var price;
 
@@ -64,7 +65,8 @@ formRoutes.route('/purchase').post(function (req, res) {
         address2: address2,
         bundle: bundle,
         cask: cask,
-        price: price
+        price: price,
+        imageUrlOnS3: imageUrlOnS3
       };
 
     nodemailerMailgun.sendMail({
@@ -100,5 +102,24 @@ formRoutes.route('/purchase').post(function (req, res) {
 
     res.json("Succes");
 })
+
+const upload = require('../../services/image-upload');
+const singleUpload = upload.single('image');
+
+formRoutes.route('/upload_image').post(function (req, res) {
+    singleUpload(req, res, function (err) {
+        if (err) {
+            return res.status(422).send({
+                errors: [{
+                    title: 'Image Upload Error',
+                    detail: err.message
+                }]
+            });
+        }
+        return res.json({
+            'imageUrl': req.file.location
+        });
+    });
+});
 
 module.exports = formRoutes;
