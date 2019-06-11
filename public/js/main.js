@@ -85,6 +85,7 @@ function readMore(){
     $('.read-more').addClass('hide-p');
     $('.read-more-overlay').addClass('hide-p');
 }
+
 // Prevent Default for Image Upload
 
 var imageURL;
