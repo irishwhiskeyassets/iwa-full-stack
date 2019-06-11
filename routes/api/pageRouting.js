@@ -7,8 +7,8 @@ var routeDef = '../../../views'
 
 app.use(express.static(path.join(__dirname, "views")));
 
-pageRoutes.get("/how-it-works", (req, res) => {
-    res.sendFile(path.join(__dirname + routeDef + '/how-it-works.html'));
+pageRoutes.get("/step-by-step", (req, res) => {
+    res.sendFile(path.join(__dirname + routeDef + '/step-by-step.html'));
 });
 
 pageRoutes.get("/purchase", (req, res) => {
