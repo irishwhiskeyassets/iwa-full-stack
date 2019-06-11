@@ -520,6 +520,18 @@ h5{
     width:100%;
 }
 
+.option-image.bottle-1{
+    width:30%;
+}
+
+.option-image.bottle-2{
+    width:40%;
+}
+
+.option-image.whiskey-still{
+    width:70%;
+}
+
 .option-image__auction{
     width:70%;
 }
