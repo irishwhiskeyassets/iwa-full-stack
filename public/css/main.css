@@ -281,11 +281,16 @@ h5{
     text-align:center;
     color:var(--primary-color);
     display:flex;
+    align-items: center;
     justify-content: center;
+    flex-direction:column;
 }
 
 .intro__inner{
     width:50vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .intro h3{
@@ -301,6 +306,30 @@ h5{
     width:40%;
     margin-top:30px;
 }
+
+.final-p{
+    position:relative;
+}
+
+.read-more-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    background: -moz-linear-gradient(top, var(--secondary-color) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, var(--secondary-color) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, var(--secondary-color) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.read-more:hover{
+    cursor:pointer;
+}
+
+.hidden-p{
+    display:none;
+}
+
+
 
 /* Calculator styling */
 
