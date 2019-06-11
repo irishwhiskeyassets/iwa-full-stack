@@ -325,11 +325,17 @@ h5{
     cursor:pointer;
 }
 
-.hidden-p{
+.hide-p{
     display:none;
 }
 
+.read-more-p{
+    animation:fadeIn .5s;
+}
 
+.read-more-p strong{
+    color:var(--cta-bg-hover);
+}
 
 /* Calculator styling */
 
@@ -773,7 +779,7 @@ h5{
 .process-hero{
     background:var(--primary-color);
     margin-top:100px;
-    padding: 10% 25%;
+    padding: 8% 25%;
     text-align: center;
 }
 
@@ -1197,4 +1203,19 @@ h5{
     } to {
         opacity:1;
     }
+}
+
+/* Selling options page styling */
+
+.selling-options-intro{
+    padding:0 60px;
+    margin-bottom:40px;
+}
+
+.selling-options-intro h2, .selling-options-intro p{
+    color:var(--primary-color);
+}
+
+.selling-body{
+    padding:6% 15% 10% 15%;
 }

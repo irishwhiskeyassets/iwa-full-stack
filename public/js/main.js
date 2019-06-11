@@ -75,3 +75,13 @@ submitButton.addEventListener('click', function (event) {
     } 
 })
 
+
+
+function readMore(){
+    var hiddenParagraph = document.getElementById('hiddenParagraph');
+    hiddenParagraph.classList.remove('hide-p');
+    $('.read-more').addClass('hide-p');
+    $('.read-more-overlay').addClass('hide-p');
+
+
+}
