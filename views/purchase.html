@@ -6,8 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Irish Whiskey Assets — Invest in Irish Whiskey</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Libre+Baskerville" rel="stylesheet">
-	<link rel="stylesheet" type="text/css"
-		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
 </head>
@@ -20,7 +19,7 @@
 		</div>
 		<div class="header__links">
 			<a href="/" class="header__link">Home</a>
-			<a href="/how-it-works" class="header__link">How it works</a>
+			<a href="/step-by-step" class="header__link">Step by Step</a>
 			<a href="#" class="header__link">Selling your casks</a>
 			<a href="#" class="header__link">Security</a>
 			<a href="/purchase" class="header__link header__link--accent">Purchase casks</a>
@@ -37,7 +36,7 @@
 	<!-- Mobile navigation menu -->
 	<div class="mobile-menu">
 		<a href="/" class="mobile-menu__link mobile-menu__top-link">Home</a>
-		<a href="/how-it-works" class="mobile-menu__link">How it works</a>
+		<a href="/step-by-step" class="mobile-menu__link">Step by Step</a>
 		<a href="#" class="mobile-menu__link">Selling your casks</a>
 		<a href="#" class="mobile-menu__link">Security</a>
 		<a href='/purchase' class="mobile-menu__link">Purchase Casks</a>
@@ -66,10 +65,15 @@
 
 	<!-- Purchasing form -->
 	<div class="purchase-form-container">
-		<div>	
+		<div>
+			<h5>Hi Nev, Make sure they click this submit before moving on</h5>
+			<form action="/api/form/upload_image" method="POST" enctype="multipart/form-data" id="cpa-form">
+				<input type="file" name="image" id="image">
+				<input type="submit">
+			</form>
 			<h5>Please select a bundle and fill in the following form:</h5>
-			<form class="purchase-form" id="purchaseForm" method="POST" action="/api/form/purchase">
-			<!-- <form class="purchase-form"> -->
+			<form class="purchase-form" id="purchaseForm" method="POST" action="/api/form/purchase" id="main_form">
+				<!-- <form class="purchase-form"> -->
 				<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
 					<div class="checkmark-container">
 						<span class="checkmark" id="bronzeCheckmark"></span>
@@ -77,7 +81,7 @@
 					</div>
 					<h4 class="bundle-casks">2 casks</h4>
 					<h4 class="bundle-price">€5995</h4>
-				</div> 
+				</div>
 				<div class="bundle-button" onclick="radioClicked(event)" id="silver">
 					<div class="checkmark-container">
 						<span class="checkmark" id="silverCheckmark"></span>
@@ -134,8 +138,10 @@
 					<input type="checkbox" name="privacy" required>
 					<span class="checkmarkBox"></span>
 				</label>
+				<input type="text" id="imageURL" name="imageURL" placeholder="This can be hidden">
 				<!-- <input type="submit" value="Send Request"> -->
-				<div id="errorMessage">Please make sure you have selected a bundle and that all the fields have been completed correctly.</div>
+				<div id="errorMessage">Please make sure you have selected a bundle and that all the fields have been
+					completed correctly.</div>
 				<button id="submitButton" class="submit-button" type="button">Send Request</button>
 			</form>
 		</div>
