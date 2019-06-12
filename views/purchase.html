@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Irish Whiskey Assets — Invest in Irish Whiskey</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Libre+Baskerville" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
 </head>
@@ -67,53 +68,54 @@
 	<div class="purchase-form-container">
 		<div>
 			<h5>Hi Nev, Make sure they click this submit before moving on</h5>
-			<form action="/api/form/upload_image" method="POST" enctype="multipart/form-data" id="cpa-form">
+			<form enctype="multipart/form-data" id="cpa-form">
+			<!-- <form action="/api/form/upload_image" method="POST" enctype="multipart/form-data" id="cpa-form"> -->
 				<input type="file" name="image" id="image">
 				<input type="submit">
 			</form>
 			<h5>Please select a bundle and fill in the following form:</h5>
-			<form class="purchase-form" id="purchaseForm" method="POST" action="/api/form/purchase" id="main_form">
-				<!-- <form class="purchase-form"> -->
-				<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
-					<div class="checkmark-container">
-						<span class="checkmark" id="bronzeCheckmark"></span>
-						<h4>Bronze</h4>
-					</div>
-					<h4 class="bundle-casks">2 casks</h4>
-					<h4 class="bundle-price">€5995</h4>
+			<!-- <form class="purchase-form"> -->
+			<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
+				<div class="checkmark-container">
+					<span class="checkmark" id="bronzeCheckmark"></span>
+					<h4>Bronze</h4>
 				</div>
-				<div class="bundle-button" onclick="radioClicked(event)" id="silver">
-					<div class="checkmark-container">
-						<span class="checkmark" id="silverCheckmark"></span>
-						<h4>Silver</h4>
-					</div>
-					<h4 class="bundle-casks">5 casks</h4>
-					<h4 class="bundle-price">€13995</h4>
+				<h4 class="bundle-casks">2 casks</h4>
+				<h4 class="bundle-price">€5995</h4>
+			</div>
+			<div class="bundle-button" onclick="radioClicked(event)" id="silver">
+				<div class="checkmark-container">
+					<span class="checkmark" id="silverCheckmark"></span>
+					<h4>Silver</h4>
 				</div>
-				<div class="bundle-button" onclick="radioClicked(event)" id="gold">
-					<div class="checkmark-container">
-						<span class="checkmark" id="goldCheckmark"></span>
-						<h4>Gold</h4>
-					</div>
-					<h4 class="bundle-casks">10 casks</h4>
-					<h4 class="bundle-price">€26995</h4>
+				<h4 class="bundle-casks">5 casks</h4>
+				<h4 class="bundle-price">€13995</h4>
+			</div>
+			<div class="bundle-button" onclick="radioClicked(event)" id="gold">
+				<div class="checkmark-container">
+					<span class="checkmark" id="goldCheckmark"></span>
+					<h4>Gold</h4>
 				</div>
-				<div class="bundle-button" onclick="radioClicked(event)" id="diamond">
-					<div class="checkmark-container">
-						<span class="checkmark" id="diamondCheckmark"></span>
-						<h4>Diamond</h4>
-					</div>
-					<h4 class="bundle-casks">15 casks</h4>
-					<h4 class="bundle-price">€38495</h4>
+				<h4 class="bundle-casks">10 casks</h4>
+				<h4 class="bundle-price">€26995</h4>
+			</div>
+			<div class="bundle-button" onclick="radioClicked(event)" id="diamond">
+				<div class="checkmark-container">
+					<span class="checkmark" id="diamondCheckmark"></span>
+					<h4>Diamond</h4>
 				</div>
-				<div class="bundle-button" onclick="radioClicked(event)" id="platinum">
-					<div class="checkmark-container">
-						<span class="checkmark" id="platinumCheckmark"></span>
-						<h4>Platinum</h4>
-					</div>
-					<h4 class="bundle-casks">25 casks</h4>
-					<h4 class="bundle-price">€59995</h4>
+				<h4 class="bundle-casks">15 casks</h4>
+				<h4 class="bundle-price">€38495</h4>
+			</div>
+			<div class="bundle-button" onclick="radioClicked(event)" id="platinum">
+				<div class="checkmark-container">
+					<span class="checkmark" id="platinumCheckmark"></span>
+					<h4>Platinum</h4>
 				</div>
+				<h4 class="bundle-casks">25 casks</h4>
+				<h4 class="bundle-price">€59995</h4>
+			</div>
+			<form class="purchase-form" id="purchaseForm" method="POST" action="/api/form/purchase">
 				<input type="radio" name="bundle" value="Bronze" id="bronzeRadio" required>
 				<input type="radio" name="bundle" value="Silver" id="silverRadio" required>
 				<input type="radio" name="bundle" value="Gold" id="goldRadio" required>
@@ -128,19 +130,19 @@
 				<input type='text' placeholder="City" name="city" required>
 				<input type='text' placeholder="Address line 1" name="address1" required>
 				<input type='text' placeholder="Address line 2" name="address2">
-				<!-- <input type="checkbox" name="terms" required> </a> -->
-				<!-- <input type="checkbox" name="privacy" required> </a> -->
-				<label class="checkContainer">I have read and agree to the <a href='/terms'>Terms & Conditions</a>
+				<label class="checkContainer">I have read and agree to the <a href='/terms'>Terms &
+						Conditions</a>
 					<input type="checkbox" name="terms" required>
 					<span class="checkmarkBox"></span>
 				</label><br>
-				<label class="checkContainer">I have read and understand the <a href='/privacy'>Privacy Policy</a>
+				<label class="checkContainer">I have read and understand the <a href='/privacy'>Privacy
+						Policy</a>
 					<input type="checkbox" name="privacy" required>
 					<span class="checkmarkBox"></span>
 				</label>
 				<input type="text" id="imageURL" name="imageURL" placeholder="This can be hidden">
-				<!-- <input type="submit" value="Send Request"> -->
-				<div id="errorMessage">Please make sure you have selected a bundle and that all the fields have been
+				<div id="errorMessage">Please make sure you have selected a bundle and that all the
+					fields have been
 					completed correctly.</div>
 				<button id="submitButton" class="submit-button" type="button">Send Request</button>
 			</form>
