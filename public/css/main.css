@@ -1234,6 +1234,11 @@ h5{
     height:100%;
 }
 
-/* input:invalid {
+#cpa-form input{
     border:1px red solid;
-} */
+    width:100%;
+    box-sizing:border-box;
+    padding:20px;
+    border: 1px #353535 solid;
+    border-radius: 8px;
+}

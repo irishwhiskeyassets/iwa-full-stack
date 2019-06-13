@@ -7,17 +7,6 @@ $(document).ready(function () {
 });
 
 
-// $(document).ready(function () {
-//     $('.carousel-container').slick({
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         arrows: true,
-//         dots: true,
-//         adaptiveHeight: true
-//     });
-// });
-
-
 // Radio buttons clicked
 
 function radioClicked(event) {
@@ -63,53 +52,6 @@ function radioClicked(event) {
             $("#" + bundleClicked + 'Radio').prop("checked", true);
             break;
     }
-}
-
-// document.getElementById("file").onchange = function() {
-//     document.getElementById("form").submit();
-// };
-
-
-var submitButton = document.getElementById('submitButton');
-
-submitButton.addEventListener('click', function (event) {
-    var form2 = document.getElementById('purchaseForm');
-    $("#imageURL").val(imageURL.imageUrl);
-    if (!form2.checkValidity()) {
-        errorMessage.style.display = 'block';
-    } else {
-        purchaseForm.submit();
-    }
-})
-
-// Prevent Default for Image Upload
-
-function submitFirst(){
-    var imageURL;
-    console.log('First');
-    $("#cpa-form").submit(function(e) {
-        console.log('heeeey');
-        e.preventDefault();
-        var formData = new FormData();
-        formData.append('image', $('#image')[0].files[0]);
-        $.ajax({
-            url: '/api/form/upload_image',
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function (data) {
-                console.log(data);
-                return imageURL = data;
-            }
-        });
-    });
-}
-
-document.getElementById("image").onchange = () => submitFirst();
-
-function testConor(){
-    console.log('hey');
 }
 
 
