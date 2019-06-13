@@ -47,6 +47,7 @@ h1{
 h2{
     font-size:var(--font-size-large);
     font-family:'Libre Baskerville', serif;
+    line-height:38px;
 }
 
 h3{
@@ -1195,6 +1196,12 @@ h5{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+@media screen and (max-width:1000px){
+    .purchase-form-container{
+        padding:5%;
+    }
+}
   
 
 @keyframes fadeIn{
@@ -1240,5 +1247,36 @@ h5{
     box-sizing:border-box;
     padding:20px;
     border: 1px #353535 solid;
-    border-radius: 8px;
+    border-radius:8px;
+    transition:.2s ease;
 }
+
+#cpa-form input:hover{
+    background:rgba(255, 255, 255, .02);
+    transition:.2s ease;
+    cursor:pointer;
+}
+
+#cpa-form input:focus{
+    outline:none;
+}
+
+#selling-carousel-3{
+    width:80px;
+}
+
+@media screen and (max-width:1000px){
+    .selling-body{
+        padding:8% 2% 15% 2%;
+    }
+
+    .selling-options-intro{
+        padding:0 30px;
+    }
+
+    #selling-carousel-3{
+        width:50px;
+    }
+    
+}
+  
