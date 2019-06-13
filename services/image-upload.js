@@ -13,10 +13,10 @@ aws.config.update({
 const s3 = new aws.S3();
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'application/pdf') {
     cb(null, true);
   } else {
-    cb(new Error('Invalid file type, only JPEG and PNG is allowed!'), false);
+    cb(new Error('Invalid file type, only JPEG, PNG, and PDF is allowed!'), false);
   }
 }
 
@@ -28,7 +28,7 @@ const upload = multer({
     bucket: 'irish-whiskey-test',
     metadata: function (req, file, cb) {
       cb(null, {
-        fieldName: 'TESTING_METADATA'
+        fieldName: 'METADATA'
       });
     },
     key: function (req, file, cb) {
