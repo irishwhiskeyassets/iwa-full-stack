@@ -338,6 +338,12 @@ h5{
     color:var(--cta-bg-hover);
 }
 
+@media screen and (max-width:1000px){
+    .read-more-overlay{
+        display:none;
+    }
+}
+
 /* Calculator styling */
 
 .calculator-container {
