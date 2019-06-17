@@ -91,6 +91,11 @@ h5{
     z-index:10;
 }
 
+.header__links{
+    display:flex;
+    align-items: center;
+}
+
 .header__logo {
     position: relative;
     height: 80px;
@@ -129,6 +134,12 @@ h5{
     background:var(--cta-bg-hover);
     transition:.2s ease;
 }
+
+.header__social-link {
+    width:20px;
+    margin:0 5px;
+}
+
 
 .hamburger-container {
     padding: 10px;
@@ -657,6 +668,10 @@ h5{
 
     /* Hero section */
     .header__link{
+        display:none;
+    }
+
+    .header__social-link {
         display:none;
     }
 
