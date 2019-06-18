@@ -1298,6 +1298,17 @@ h5{
     #selling-carousel-3{
         width:50px;
     }
-    
 }
-  
+
+/* Styling our investment model page */
+
+.model-body{
+    color:var(--primary-color);
+    padding:5% 15%;
+}
+
+@media screen and (max-width:600px){
+    .model-body{
+        padding: 5% 8%;
+    }
+}
