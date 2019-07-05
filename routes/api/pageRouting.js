@@ -23,4 +23,8 @@ pageRoutes.get("/our-investment-model", (req, res) => {
     res.sendFile(path.join(__dirname + routeDef + '/our-investment-model.html'));
 });
 
+pageRoutes.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname + routeDef + '/contact.html'));
+});
+
 module.exports = pageRoutes;

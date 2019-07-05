@@ -1312,3 +1312,84 @@ h5{
         padding: 5% 8%;
     }
 }
+
+/* Contact page styling */
+
+.contact-body{
+    margin-top:100px;
+    height:calc(100vh - 100px);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#map{
+    height:100%;
+    width:100%;
+}
+
+.map-container{
+    background:grey;
+    height:100%;
+    position:relative;
+    box-sizing:border-box;
+}
+
+.map-overlay{
+    position:absolute;
+    bottom:0;
+    right:0;
+    background:var(--cta-bg);
+    z-index: 5;
+    padding:30px;
+}
+
+.map-overlay p{
+    box-sizing: border-box;
+    margin:0;
+}
+
+.contact-form-container{
+    padding:12% 22%;
+    color:var(--primary-color);
+    box-sizing:border-box;
+    display:flex;
+    flex-direction: column;
+    background:none;
+    background:url('/public/img/iwa-logo.png');
+    background-size:cover;
+}
+
+.contact-form-container input, .contact-form-container textarea{
+    background:none;
+    padding:12px;
+    border: 1px #353535 solid;
+    border-radius:6px;
+    color:white;
+    margin:10px 0;
+    font-size:12pt;
+    transition:.2s ease;
+    background:rgba(255, 255, 255, .02);
+    box-sizing:border-box;
+    font-family:'Lato', sans-serif !important;
+    letter-spacing:.5px;
+}
+
+.contact-form-container textarea{
+    resize:none;
+    height:150px;
+}
+
+.contact-form-container input:focus, .contact-form-container textarea:focus{
+    outline:none;
+    outline:none;
+    border: 1px var(--primary-color) solid;
+    transition:.2s ease;
+}
+
+.contact-form-container strong{
+    color:var(--cta-bg-hover);
+}
+
+.contact-form-submit{
+    display: inline-block;
+}
