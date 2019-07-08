@@ -135,7 +135,7 @@ formRoutes.route('/contact').post(function (req, res) {
         }
     });
 
-    res.json("Success");
+    res.json("contact form submited");
 })
 
 const upload = require('../../services/image-upload');

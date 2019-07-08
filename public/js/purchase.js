@@ -13,7 +13,6 @@ submitButton.addEventListener('click', function (event) {
 var imageURL;
 
 function submitFirst(){
-    console.log('First');
     $("#cpa-form").submit(function(e){
         e.preventDefault();
         var formData = new FormData();
