@@ -103,6 +103,41 @@ formRoutes.route('/purchase').post(function (req, res) {
     res.json("Succes");
 })
 
+formRoutes.route('/contact').post(function (req, res) {
+
+    var email = req.body.email;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var phone = req.body.phone;
+    var message = req.body.message;
+
+
+    var contextObjectContact = {
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        message: message,
+        email: email
+      };
+
+    nodemailerMailgun.sendMail({
+        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
+        to: process.env.companyEmail,
+        subject: 'New Contact Form Entry',
+        template: {
+            name: 'emailService/contact.hbs',
+            engine: 'handlebars',
+            context: contextObjectContact
+          }
+    }, function (err, info) {
+        if (err) {
+            console.log('Error: ' + err);
+        }
+    });
+
+    res.json("Success");
+})
+
 const upload = require('../../services/image-upload');
 const singleUpload = upload.single('image');
 
