@@ -15,7 +15,6 @@ var imageURL;
 function submitFirst(){
     console.log('First');
     $("#cpa-form").submit(function(e){
-        console.log('heeeey');
         e.preventDefault();
         var formData = new FormData();
         formData.append('image', $('#image')[0].files[0]);
@@ -26,7 +25,6 @@ function submitFirst(){
             processData: false,
             contentType: false,
             success: function (data) {
-                console.log(data);
                 return $("#imageURL").val(data.imageUrl);
             }
         });
@@ -34,7 +32,3 @@ function submitFirst(){
 }
 
 document.getElementById("image").onchange = () => submitFirst();
-
-function testConor(){
-    console.log('hey');
-}
