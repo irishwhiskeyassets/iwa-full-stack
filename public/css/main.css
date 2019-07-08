@@ -1325,6 +1325,7 @@ h5{
 #map{
     height:100%;
     width:100%;
+    box-sizing:border-box;
 }
 
 .map-container{
@@ -1340,7 +1341,7 @@ h5{
     right:0;
     background:var(--cta-bg);
     z-index: 5;
-    padding:30px;
+    padding:30px
 }
 
 .map-overlay p{
@@ -1392,4 +1393,33 @@ h5{
 
 .contact-form-submit{
     display: inline-block;
+}
+
+@media screen and (max-width:1000px){
+    .contact-body{
+        grid-template-rows: auto auto;
+        grid-template-columns:1fr;
+        height:auto;
+        width:100vw;
+    }
+
+    .contact-form-container{
+        padding:50px 10%;
+        box-sizing:border-box;
+        width:100vw;
+        
+    }
+
+    .map-container{
+        height:500px;
+        grid-row:-1;
+        width:100vw;
+    }
+
+    .name-group{
+        grid-template-rows:1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-gap:0;
+    }
+
 }
