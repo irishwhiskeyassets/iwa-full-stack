@@ -138,6 +138,12 @@ h5{
 .header__social-link {
     width:20px;
     margin:0 5px;
+    transition: .2s ease;
+}
+
+.header__social-link:hover{
+    filter:brightness(.9) saturate(1.5);
+    transition: .2s ease;
 }
 
 
@@ -1329,7 +1335,7 @@ h5{
 }
 
 .map-container{
-    background:grey;
+    background:var(--secondary-color);
     height:100%;
     position:relative;
     box-sizing:border-box;
@@ -1347,6 +1353,11 @@ h5{
 .map-overlay p{
     box-sizing: border-box;
     margin:0;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
 }
 
 .contact-form-container{
