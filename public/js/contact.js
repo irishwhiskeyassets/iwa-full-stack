@@ -1,18 +1,15 @@
-function contactForm(){
-    console.log("Sick");
-    $("#contact-form").submit(function(e){
-        console.log("form here")
-        e.preventDefault();
-        var formData = new FormData();
+function contactForm() {
+    var frm = $('#contact-form');
+    frm.submit(function (ev) {
+        ev.preventDefault();
+        $('#swapper').css('display', 'none');
         $.ajax({
-            url: '/api/form/contact',
             type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
+            url: '/api/form/contact',
+            data: frm.serialize(),
             success: function (data) {
-                return console.log('Contact Form');
+                return data;
             }
         });
     });
-}
+};
