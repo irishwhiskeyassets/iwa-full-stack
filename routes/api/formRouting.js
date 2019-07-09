@@ -121,7 +121,7 @@ formRoutes.route('/contact').post(function (req, res) {
       };
 
     nodemailerMailgun.sendMail({
-        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
+        from: 'Irish Whiskey Assets',
         to: process.env.companyEmail,
         subject: 'New Contact Form Entry',
         template: {
