@@ -2,7 +2,8 @@ function contactForm() {
     var frm = $('#contact-form');
     frm.submit(function (ev) {
         ev.preventDefault();
-        $('#swapper').css('display', 'none');
+        $('#contact-form').css('display', 'none');
+        $('#contact-confirmation').css('display', 'block');
         $.ajax({
             type: 'POST',
             url: '/api/form/contact',

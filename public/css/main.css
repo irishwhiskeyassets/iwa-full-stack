@@ -1406,6 +1406,24 @@ h5{
     display: inline-block;
 }
 
+.contact-confirmation-box{
+    background:rgba(255, 255, 255, .05);
+    border-radius:10px;
+    border: 1px var(--primary-color) solid;
+    padding:20px;
+    width:100%;
+    box-sizing:border-box;
+    color:var(--primary-color);
+    display:none;
+    animation:fadeIn .3s;
+}
+
+@media screen and (max-width:1280px){
+    .contact-form-container{
+        padding: 8% 13%;
+    }
+}
+
 @media screen and (max-width:1000px){
     .contact-body{
         grid-template-rows: auto auto;
@@ -1433,4 +1451,15 @@ h5{
         grid-gap:0;
     }
 
+}
+
+
+
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    } to {
+        opacity:1;
+    }
 }
