@@ -632,7 +632,7 @@ h5{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding:10px 50px;
+    padding:20px 100px;
     box-sizing:border-box;
 }
 
@@ -1366,9 +1366,9 @@ h5{
     box-sizing:border-box;
     display:flex;
     flex-direction: column;
-    background:none;
-    background:url('/public/img/iwa-logo.png');
+    background:url('../img/still-bg.svg');
     background-size:cover;
+    background-position:right;
 }
 
 .contact-form-container input, .contact-form-container textarea{
