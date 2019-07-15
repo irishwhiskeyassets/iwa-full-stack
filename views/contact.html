@@ -220,7 +220,7 @@
 			<p>If you have any questions, don't hesitate to get in touch. You can fill in the following form
 				or contact us directly using either <strong><a
 						href="mailto:founder@irishwhiskeyassets.com">founder@irishwhiskeyassets.com</a></strong>
-				or <strong>353 86 4559022.</strong></p>
+				or <strong>(+353) 1 588 0189</strong></p>
 			<form class="contact-form" id="contact-form" name="contact-form">
 				<div class="name-group">
 					<input type='text' placeholder="First name" name="firstName" required>
@@ -229,6 +229,17 @@
 				<input type='email' placeholder="Email" name="email" required>
 				<input type='text' placeholder="Phone number" name="phone" required>
 				<textarea type='text' placeholder="Your message" name="message" required></textarea>
+				<label class="checkContainer">I have read and agree to the <a href='/terms'>Terms &
+					Conditions</a>
+					<input type="checkbox" name="terms" required>
+					<span class="checkmarkBox"></span>
+				</label><br>
+				<label class="checkContainer">I have read and understand the <a href='/privacy-policy'>Privacy
+					Policy</a>
+					<input type="checkbox" name="privacy" required>
+					<span class="checkmarkBox"></span>
+				</label>
+				<div id="errorMessage">Please ensure that you have filled in the required fields and selected the two checkboxes.</div>
 				<button class="submit-button contact-form-submit" id="submit-contact-button" onclick="contactForm()">Send Message</button>
 			</form>
 			<div id="contact-confirmation" class="contact-confirmation-box">
@@ -243,8 +254,8 @@
 	<div class="footer">
 		<div class="footer--left">
 			<img src="img/iwa-logo-footer.svg" class="footer--logo">
-			<p>© 2019 Irish Whiskey Assets Ltd.Company Registered in Ireland, No 624519 Unit 4, <br>
-				Roof Garden Offices, Clarehall Shopping Centre, Dublin 17, D17 PW81, Ireland </p>
+			<p>© 2019 Irish Whiskey Assets Ltd.Company Registered in Ireland.<br>WeWork Offices 1-119, 
+				2 Dublin Landings, N Wall Quay, North Dock, Dublin, D01 V4A3</p>
 		</div>
 		<div class="footer--right">
 			<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg" class="footer--social-icon"></a>

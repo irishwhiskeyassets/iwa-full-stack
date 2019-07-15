@@ -27,4 +27,12 @@ pageRoutes.get("/contact", (req, res) => {
     res.sendFile(path.join(__dirname + routeDef + '/contact.html'));
 });
 
+pageRoutes.get("/privacy-policy", (req, res) => {
+    res.sendFile(path.join(__dirname + routeDef + '/privacy-policy.html'));
+});
+
+pageRoutes.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname + routeDef + '/contact.html'));
+});
+
 module.exports = pageRoutes;
