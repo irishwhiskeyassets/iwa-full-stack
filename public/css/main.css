@@ -117,6 +117,7 @@ h5{
     letter-spacing:1px;
     text-transform:uppercase;
     transition:.2s ease;
+    white-space: nowrap;
 }
 
 .header__link:hover{
