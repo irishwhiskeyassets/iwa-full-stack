@@ -25,7 +25,7 @@ const upload = multer({
   storage: multerS3({
     acl: 'public-read',
     s3: s3,
-    bucket: 'irish-whiskey-test',
+    bucket: 'irish-whiskey-assets-form-id-bucket',
     metadata: function (req, file, cb) {
       cb(null, {
         fieldName: 'METADATA'
