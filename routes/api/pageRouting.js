@@ -35,4 +35,8 @@ pageRoutes.get("/contact", (req, res) => {
     res.sendFile(path.join(__dirname + routeDef + '/contact.html'));
 });
 
+pageRoutes.get("/confirmation", (req, res) => {
+    res.sendFile(path.join(__dirname + routeDef + '/confirmation.html'));
+});
+
 module.exports = pageRoutes;

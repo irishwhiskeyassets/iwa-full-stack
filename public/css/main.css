@@ -1316,9 +1316,33 @@ h5{
     padding:5% 15%;
 }
 
+/* Confirmation page styling */
+
+.order-confirmation-hero{
+    margin-top:100px;
+    padding:6% 20%;
+    color:var(--primary-color);
+}
+
+.order-confirmation-box{
+    border: 1px #353535 solid;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 70px;
+    border-radius: 10px;
+}
+
 @media screen and (max-width:600px){
     .model-body{
         padding: 5% 8%;
+    }
+
+    .order-confirmation-hero{
+        padding:20px;
+    }
+
+    .order-confirmation-box{
+        padding:40px;
     }
 }
 
