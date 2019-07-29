@@ -100,7 +100,7 @@ formRoutes.route('/purchase').post(function (req, res) {
         }
     });
 
-    res.sendFile(path.join(__dirname + routeDef + '/confirmation.html'));
+    res.redirect('https://irishwhiskeyassets.com/confirmation');
 })
 
 formRoutes.route('/contact').post(function (req, res) {
