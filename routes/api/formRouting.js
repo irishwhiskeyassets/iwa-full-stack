@@ -1,8 +1,8 @@
 const express = require("express");
 require('dotenv').config();
-const path = require('path');
-//var routeDef = '../../../views'
 const app = express();
+const path = require('path');
+var routeDef = '../../../views'
 app.use(express.static(path.join(__dirname, "views")));
 const formRoutes = express.Router();
 var nodemailer = require('nodemailer');
@@ -100,7 +100,7 @@ formRoutes.route('/purchase').post(function (req, res) {
         }
     });
 
-    res.json("Succes");
+    res.sendFile(path.join(__dirname + routeDef + '/confirmation.html'));
 })
 
 formRoutes.route('/contact').post(function (req, res) {
@@ -134,8 +134,7 @@ formRoutes.route('/contact').post(function (req, res) {
             console.log('Error: ' + err);
         }
     });
-
-    res.json("contact form submited");
+    res.json("success")
 })
 
 const upload = require('../../services/image-upload');
