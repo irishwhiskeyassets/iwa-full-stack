@@ -6,10 +6,22 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Irish Whiskey Assets — Invest in Irish Whiskey</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Libre+Baskerville" rel="stylesheet">
-	<link rel="stylesheet" type="text/css"
-		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118603426-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-118603426-1');
+	</script>
+
 </head>
 
 <body>
@@ -26,9 +38,12 @@
 			<a href="https://mccarthyswhiskey.ie/" class="header__link">McCarthy's Irish Whiskey</a>
 			<a href="/contact" class="header__link">Contact</a>
 			<a href="/purchase" class="header__link header__link--accent">Purchase casks</a>
-				<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg" class="header__social-link"></a>
-				<a href="https://www.facebook.com/IrishWhiskeyAssets/"><img src="img/facebook-icon.svg" class="header__social-link"></a>
-				<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg" class="header__social-link"></a>
+			<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg"
+					class="header__social-link"></a>
+			<a href="https://www.facebook.com/IrishWhiskeyAssets/"><img src="img/facebook-icon.svg"
+					class="header__social-link"></a>
+			<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg"
+					class="header__social-link"></a>
 			<div class="hamburger-container">
 				<div class="hamburger" id="hamburger-1">
 					<span class="line"></span>
@@ -41,19 +56,22 @@
 
 	<!-- Mobile navigation menu -->
 	<div class="mobile-menu">
-			<a href="/" class="mobile-menu__link mobile-menu__top-link">Home</a>
-			<a href="/our-investment-model" class="mobile-menu__link">Our Investment Model</a>
-			<a href="/step-by-step" class="mobile-menu__link">Step by Step</a>
-			<a href="/selling" class="mobile-menu__link">Selling your casks</a>
-			<a href="https://mccarthyswhiskey.ie/" class="mobile-menu__link mccarthys">McCarthy's Whiskey</a>
-			<a href="/contact" class="mobile-menu__link">Contact</a>
-			<a href="/purchase" class="mobile-menu__link">Purchase casks</a>
-			<span class="mobile-menu__divider"></span>
-			<div class="mobile-menu__social">
-				<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg" class="mobile-menu__social-icon"></a>
-				<a href="https://www.facebook.com/IrishWhiskeyAssets/"><img src="img/facebook-icon.svg" class="mobile-menu__social-icon"></a>
-				<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg" class="mobile-menu__social-icon"></a>
-			</div>
+		<a href="/" class="mobile-menu__link mobile-menu__top-link">Home</a>
+		<a href="/our-investment-model" class="mobile-menu__link">Our Investment Model</a>
+		<a href="/step-by-step" class="mobile-menu__link">Step by Step</a>
+		<a href="/selling" class="mobile-menu__link">Selling your casks</a>
+		<a href="https://mccarthyswhiskey.ie/" class="mobile-menu__link mccarthys">McCarthy's Whiskey</a>
+		<a href="/contact" class="mobile-menu__link">Contact</a>
+		<a href="/purchase" class="mobile-menu__link">Purchase casks</a>
+		<span class="mobile-menu__divider"></span>
+		<div class="mobile-menu__social">
+			<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg"
+					class="mobile-menu__social-icon"></a>
+			<a href="https://www.facebook.com/IrishWhiskeyAssets/"><img src="img/facebook-icon.svg"
+					class="mobile-menu__social-icon"></a>
+			<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg"
+					class="mobile-menu__social-icon"></a>
+		</div>
 	</div>
 
 	<!-- Hero section -->
@@ -136,18 +154,20 @@
 				<input type='text' placeholder="City" name="city" required>
 				<input type='text' placeholder="Address line 1" name="address1" required>
 				<input type='text' placeholder="Address line 2" name="address2">
-				<label class="checkContainer">I have read and agree to the <a href='https://irishwhiskeyassets.s3-eu-west-1.amazonaws.com/IWA+Terms+%26+Conditions.docx'>Terms &
+				<label class="checkContainer">I have read and agree to the <a
+						href='https://irishwhiskeyassets.s3-eu-west-1.amazonaws.com/IWA+Terms+%26+Conditions.docx'>Terms
+						&
 						Conditions</a>
 					<input type="checkbox" name="terms" required>
 					<span class="checkmarkBox"></span>
 				</label><br>
-				<label class="checkContainer">I have read and understand the <a href='https://irishwhiskeyassets.s3-eu-west-1.amazonaws.com/privacy+policy+IWA+dated+23.3.19.doc'>Privacy
+				<label class="checkContainer">I have read and understand the <a
+						href='https://irishwhiskeyassets.s3-eu-west-1.amazonaws.com/privacy+policy+IWA+dated+23.3.19.doc'>Privacy
 						Policy</a>
 					<input type="checkbox" name="privacy" required>
 					<span class="checkmarkBox"></span>
 				</label>
-				<input type="text" id="imageURL" name="imageURL" placeholder="This can be hidden"
-					required>
+				<input type="text" id="imageURL" name="imageURL" placeholder="This can be hidden" required>
 				<div id="errorMessage">Please make sure you have selected a bundle and that all the
 					fields have been
 					completed correctly.</div>
@@ -158,22 +178,27 @@
 
 	<!-- Cookie popup -->
 	<div id="cookie-popup">
-		<span class="cookie-text">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it. </span><br class="cookie-break">
+		<span class="cookie-text">We use cookies to ensure that we give you the best experience on our website. If you
+			continue to use this site we will assume that you are happy with it. </span><br class="cookie-break">
 		<span class="cookie-cta" onclick="acceptCookies()">Accept</span>
-		<a href="https://irishwhiskeyassets.s3-eu-west-1.amazonaws.com/privacy+policy+IWA+dated+23.3.19.doc"><span class="cookie-cta cookie-cta__privacy">Cookie Policy</span></a>
+		<a href="https://irishwhiskeyassets.s3-eu-west-1.amazonaws.com/privacy+policy+IWA+dated+23.3.19.doc"><span
+				class="cookie-cta cookie-cta__privacy">Cookie Policy</span></a>
 	</div>
-	
+
 	<!-- Footer -->
 	<div class="footer">
 		<div class="footer--left">
 			<img src="img/iwa-logo-footer.svg" class="footer--logo">
-			<p>© 2019 Irish Whiskey Assets Ltd.Company Registered in Ireland.<br>WeWork Offices 1-119, 
+			<p>© 2019 Irish Whiskey Assets Ltd.Company Registered in Ireland.<br>WeWork Offices 1-119,
 				2 Dublin Landings, N Wall Quay, North Dock, Dublin, D01 V4A3</p>
 		</div>
 		<div class="footer--right">
-			<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg" class="footer--social-icon"></a>
-			<a href="https://www.facebook.com/IrishWhiskeyAssets/"><img src="img/facebook-icon.svg" class="footer--social-icon"></a>
-			<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg" class="footer--social-icon"></a>
+			<a href="https://www.instagram.com/irishwhiskeyassets/"><img src="img/instagram-icon.svg"
+					class="footer--social-icon"></a>
+			<a href="https://www.facebook.com/IrishWhiskeyAssets/"><img src="img/facebook-icon.svg"
+					class="footer--social-icon"></a>
+			<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg"
+					class="footer--social-icon"></a>
 		</div>
 	</div>
 
@@ -189,9 +214,41 @@
 		window.intercomSettings = {
 			app_id: "mw8nldo7"
 		};
-		</script>
-		
-		<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/mw8nldo7';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+	</script>
+
+	<script>
+		(function () {
+			var w = window;
+			var ic = w.Intercom;
+			if (typeof ic === "function") {
+				ic('reattach_activator');
+				ic('update', w.intercomSettings);
+			} else {
+				var d = document;
+				var i = function () {
+					i.c(arguments);
+				};
+				i.q = [];
+				i.c = function (args) {
+					i.q.push(args);
+				};
+				w.Intercom = i;
+				var l = function () {
+					var s = d.createElement('script');
+					s.type = 'text/javascript';
+					s.async = true;
+					s.src = 'https://widget.intercom.io/widget/mw8nldo7';
+					var x = d.getElementsByTagName('script')[0];
+					x.parentNode.insertBefore(s, x);
+				};
+				if (w.attachEvent) {
+					w.attachEvent('onload', l);
+				} else {
+					w.addEventListener('load', l, false);
+				}
+			}
+		})();
+	</script>
 </body>
 
 </html>
