@@ -100,7 +100,7 @@ formRoutes.route('/purchase').post(function (req, res) {
         }
     });
 
-    res.json("Succes");
+    res.sendFile(path.join(__dirname + routeDef + '/confirmation.html'));
 })
 
 formRoutes.route('/contact').post(function (req, res) {
@@ -134,8 +134,7 @@ formRoutes.route('/contact').post(function (req, res) {
             console.log('Error: ' + err);
         }
     });
-
-    res.sendFile(path.join(__dirname + routeDef + '/confirmation.html'));
+    res.json("success")
 })
 
 const upload = require('../../services/image-upload');
