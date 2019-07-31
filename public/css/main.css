@@ -265,6 +265,32 @@ h5{
     margin:10px 0 20px 0;
 }
 
+.hero-cta-group{
+    display:flex;
+    align-items:center;
+}
+
+.hero-video-link {
+    display:flex;
+    align-items:center;
+}
+
+.hero-video-link h5{
+    margin-left:20px;
+    font-weight:bolder;
+}
+
+.video-play{
+    width:25px;
+    margin-left:10px;
+    transition:.3s ease;
+}
+
+.hero-video-link:hover .video-play{
+    transform:scale(1.2);
+    transition:.3s ease;
+}
+
 .cta-button{
     background:var(--cta-bg);
     color:var(--cta-font);
@@ -276,6 +302,7 @@ h5{
     letter-spacing:1px;
     box-sizing:border-box;
     display:block;
+    white-space: nowrap;
 }
 
 .cta-button:hover{
@@ -321,6 +348,23 @@ h5{
 .intro h1{
     color:var(--primary-color);
     margin:20px 0 30px 0;
+}
+
+.intro-video-link {
+    display:flex;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.intro-video-link h5{
+    font-weight:bolder;
+    margin:0;
+    white-space: nowrap;
+}
+
+.hero-video-link:hover .video-play{
+    transform:scale(1.2);
+    transition:.3s ease;
 }
 
 .whiskey-still{
@@ -1343,6 +1387,15 @@ h5{
 
     .order-confirmation-box{
         padding:40px;
+    }
+
+    .hero-cta-group{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-video-link h5{
+        margin-left:0;
     }
 }
 
