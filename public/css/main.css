@@ -277,12 +277,14 @@ h5{
 
 .hero-video-link h5{
     margin-left:20px;
-    font-weight:bolder;
+    font-size:14pt;
+    font-weight:400;
+    white-space: nowrap;
 }
 
 .video-play{
-    width:25px;
-    margin-left:10px;
+    width:45px;
+    margin-left:12px;
     transition:.3s ease;
 }
 
