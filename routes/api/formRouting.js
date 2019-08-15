@@ -7,10 +7,14 @@ app.use(express.static(path.join(__dirname, "views")));
 const formRoutes = express.Router();
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
+var Intercom = require('intercom-client');
+var client = new Intercom.Client({
+    token: process.env.intercomToken
+});
 
 var auth = {
     auth: {
-        
+
         api_key: process.env.api_key,
         domain: process.env.domain
     },
@@ -53,9 +57,9 @@ formRoutes.route('/purchase').post(function (req, res) {
         bundle: bundle,
         cask: cask,
         price: price
-      };
+    };
 
-      var contextObjectBusiness = {
+    var contextObjectBusiness = {
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -67,10 +71,13 @@ formRoutes.route('/purchase').post(function (req, res) {
         cask: cask,
         price: price,
         imageUrlOnS3: imageUrlOnS3
-      };
+    };
 
     nodemailerMailgun.sendMail({
-        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
+        from: {
+            name: 'Irish Whiskey Assets',
+            address: process.env.companyEmail
+        },
         to: email,
         subject: "Dear " + firstName + ", here's your cask order summary",
         'h:Reply-To': process.env.companyEmail,
@@ -78,7 +85,7 @@ formRoutes.route('/purchase').post(function (req, res) {
             name: 'emailService/emailCustomer.hbs',
             engine: 'handlebars',
             context: contextObjectCustomer
-          }
+        }
     }, function (err, info) {
         if (err) {
             console.log('Error: ' + err);
@@ -86,14 +93,23 @@ formRoutes.route('/purchase').post(function (req, res) {
     });
 
     nodemailerMailgun.sendMail({
-        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
-        to: [{address: process.env.businessOne}, {address: process.env.businessTwo}, {address: process.env.businessThree}],
+        from: {
+            name: 'Irish Whiskey Assets',
+            address: process.env.companyEmail
+        },
+        to: [{
+            address: process.env.businessOne
+        }, {
+            address: process.env.businessTwo
+        }, {
+            address: process.env.businessThree
+        }],
         subject: 'New Order Enquiry',
         template: {
             name: 'emailService/emailBusiness.hbs',
             engine: 'handlebars',
             context: contextObjectBusiness
-          }
+        }
     }, function (err, info) {
         if (err) {
             console.log('Error: ' + err);
@@ -111,6 +127,18 @@ formRoutes.route('/contact').post(function (req, res) {
     var phone = req.body.phone;
     var message = req.body.message;
 
+    client.leads.create({
+        email: email,
+        name: firstName + ' ' + lastName,
+        phone: phone,
+        custom_attributes: {
+            message: message
+        }
+    
+    }, function (r) {
+        console.log("Sucess");
+    });
+
 
     var contextObjectContact = {
         firstName: firstName,
@@ -118,17 +146,20 @@ formRoutes.route('/contact').post(function (req, res) {
         phone: phone,
         message: message,
         email: email
-      };
+    };
 
     nodemailerMailgun.sendMail({
-        from: {name: 'Irish Whiskey Assets', address: process.env.companyEmail},
+        from: {
+            name: 'Irish Whiskey Assets',
+            address: process.env.companyEmail
+        },
         to: process.env.companyEmail,
         subject: 'New Contact Form Entry',
         template: {
             name: 'emailService/contact.hbs',
             engine: 'handlebars',
             context: contextObjectContact
-          }
+        }
     }, function (err, info) {
         if (err) {
             console.log('Error: ' + err);
