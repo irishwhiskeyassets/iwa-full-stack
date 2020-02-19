@@ -22,7 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.3.0",
     "intercom-client": "^2.11.0",
     "lity": "^2.3.1",
     "multer": "^1.4.1",
