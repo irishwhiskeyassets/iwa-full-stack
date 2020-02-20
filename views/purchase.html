@@ -34,13 +34,13 @@
 		gtag('config', 'AW-752490609');
 	</script>
 	<style>
-		.container{
+		.container {
 			padding-top: 5vh;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-		  }
+		}
 	</style>
 
 
@@ -96,7 +96,8 @@
 					class="header__social-link"></a>
 			<a href="https://www.linkedin.com/company/irish-whiskey-assets"><img src="img/linkedin-icon.svg"
 					class="header__social-link"></a>
-			<a href="https://www.youtube.com/channel/UCcB-FKkzCCS74bN1pVJ0otA"><img src="img/youtube-icon.svg" class="header__social-link"></a>
+			<a href="https://www.youtube.com/channel/UCcB-FKkzCCS74bN1pVJ0otA"><img src="img/youtube-icon.svg"
+					class="header__social-link"></a>
 			<div class="hamburger-container">
 				<div class="hamburger" id="hamburger-1">
 					<span class="line"></span>
@@ -134,19 +135,26 @@
 		<div>
 			<!-- Passbase Identity Verification -->
 			<div class="container">
-				<h5>Please go through our identity verification process so we can register the casks in your name, preventing any fraudulent activities.</h5>
+				<h5>Please go through our identity verification process so we can register the casks in your name,
+					preventing any fraudulent activities.</h5>
 				<div id="passbase-button"> </div>
 			</div>
 			<script type="text/javascript" src="https://app.passbase.com/button.js"></script>
-				<div  id="passbase-button"> </div>
-				<script  type="text/javascript">
-        		Passbase.renderButton(document.getElementById("passbase-button"), (err, passport) => {},
-				"bb38188aacbe64db1a4923b4b65203548fcc31e9d3728b37d912aea1e803d711",
-        		{
-       				"prefillAttributes":{"country":"ie","email":""},
-       				"theme":{"accentColor":"#ff0000", "darkmode":true}
-       			}"signup");
-				</script>
+			<div id="passbase-button"> </div>
+			<script type="text/javascript">
+				Passbase.renderButton(document.getElementById("passbase-button"), (err, passport) => {},
+					"bb38188aacbe64db1a4923b4b65203548fcc31e9d3728b37d912aea1e803d711", {
+						"prefillAttributes": {
+							"country": "ie",
+							"email": ""
+						},
+						"theme": {
+							"accentColor": "#ff0000",
+							"darkmode": true
+						}
+					}
+					,"signup");
+			</script>
 			<h5>Next, select a bundle and fill in the following form:</h5>
 			<!-- <form class="purchase-form"> -->
 			<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
@@ -239,7 +247,8 @@
 	<div class="footer">
 		<div class="footer--left">
 			<img src="img/iwa-logo-footer.svg" class="footer--logo">
-			<p>© 2019 Angels Share Secured Investments Limited T/A Irish Whiskey Assets, Company Registered in Ireland.<br>WeWork Offices 1-119,
+			<p>© 2019 Angels Share Secured Investments Limited T/A Irish Whiskey Assets, Company Registered in
+				Ireland.<br>WeWork Offices 1-119,
 				2 Dublin Landings, N Wall Quay, North Dock, Dublin, D01 V4A3</p>
 		</div>
 		<div class="footer--right">
