@@ -33,6 +33,15 @@
 
 		gtag('config', 'AW-752490609');
 	</script>
+	<style>
+		.container{
+			padding-top: 5vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		  }
+	</style>
 
 
 </head>
@@ -123,11 +132,21 @@
 	<!-- Purchasing form -->
 	<div class="purchase-form-container">
 		<div>
-			<h5>Please provide your photo identification so we can register the casks in your name</h5>
-			<form enctype="multipart/form-data" id="cpa-form">
-				<input type="file" name="image" id="image">
-				<!-- <input type="submit"> -->
-			</form>
+			<!-- Passbase Identity Verification -->
+			<div class="container">
+				<h5>Please go through our identity verification process so we can register the casks in your name, preventing any fraudulent activities.</h5>
+				<div id="passbase-button"> </div>
+			</div>
+			<script type="text/javascript" src="https://app.passbase.com/button.js"></script>
+				<div  id="passbase-button"> </div>
+				<script  type="text/javascript">
+        		Passbase.renderButton(document.getElementById("passbase-button"), (err, passport) => {},
+               	process.env.passbase_api,
+        		{
+       				"prefillAttributes":{"country":"ie","email":""},
+       				"theme":{"accentColor":"#ff0000","font":"Lato", "darkmode":true}
+       			});
+				</script>
 			<h5>Next, select a bundle and fill in the following form:</h5>
 			<!-- <form class="purchase-form"> -->
 			<div class="bundle-button" onclick='radioClicked(event)' id='bronze'>
