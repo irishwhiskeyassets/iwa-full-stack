@@ -679,12 +679,13 @@ h5{
     background:var(--primary-color);
 }
 .box-tile{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    border:1px #353535 solid;
-    margin:10px;
-    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px #353535 solid;
+    margin: 10px;
+    box-sizing: border-box;
     padding:70px;
     border-radius:10px;
     box-shadow:
