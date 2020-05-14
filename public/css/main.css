@@ -678,6 +678,35 @@ h5{
     padding:150px 0;
     background:var(--primary-color);
 }
+
+@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
+  &:after {
+    position: absolute;
+    content: "";
+    top: $y;
+    left: $x;
+    right: 0;
+    z-index: -1;
+    height: 70%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale($size);
+    -webkit-filter: blur($spread);
+    -moz-filter: blur($spread);
+    -ms-filter: blur($spread);
+    filter: blur($spread);
+    background: linear-gradient(270deg, $colorA, $colorB);
+    background-size: 200% 200%;
+    animation: animateGlow $duration ease infinite;
+    
+    @keyframes animateGlow {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+  }
+}
+
 .box-tile{
     display: flex;
     flex-direction: column;
@@ -688,6 +717,20 @@ h5{
     box-sizing: border-box;
     padding:50px;
     border-radius:10px;
+    animation: textColor 10s ease infinite;
+  	@include backlight(0, 5vw, 5vw, 0.65, #fff7e3, #c69941, 10s);
+    
+  	@keyframes textColor {
+    	  0% {
+      	  color: #e2ca9a;
+    	  }
+    	  50% {
+      	  color: #fff7e3;
+    	  }
+    	  100% {
+      	  color: #c69941;
+    	  }
+  	}
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
