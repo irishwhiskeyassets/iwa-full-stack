@@ -673,6 +673,8 @@ h5{
 
 .home-bottom-cta{
     display:grid;
+    width: 100%;
+    min-height: 50vh;
     overflow-x: hidden;
     overflow-y: hidden;
     grid-template-columns: repeat(2, 1fr);
@@ -687,16 +689,22 @@ h5{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-size: 1px;
-  border-colour:var(--primary-color);
+  background-color : #fff7e3;
+  border-style : solid;
+  border-radius : 1px;
+  border-width : 1px;
+  vertical-align : middle;
 }
 .right {
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-size: 1px;
-  border-colour:var(--primary-color);
+  background-color : #fff7e3;
+  border-style : solid;
+  border-radius : 1px;
+  border-width : 1px;
+  vertical-align : middle;
 }
 
 /* Footer */
