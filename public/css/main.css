@@ -672,12 +672,33 @@ h5{
 /* Home bottom cta */
 
 .home-bottom-cta{
-    display:flex;
-    flex-direction: column;
+    display:grid;
     justify-content: center;
     align-items:center;
-    padding:150px 0;
-    background:var(--primary-color);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background:var(--secondary-color);
+}
+
+.left {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-size: 1px;
+  border-colour:var(--primary-color);
+}
+.right {
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-size: 1px;
+  border-colour:var(--primary-color);
 }
 
 /* Footer */
