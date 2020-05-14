@@ -687,6 +687,7 @@ h5{
   grid-area: left;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color : #fff7e3;
   border-style : solid;
   border-radius : 1px;
@@ -697,6 +698,7 @@ h5{
   grid-area: right;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color : #fff7e3;
   border-style : solid;
   border-radius : 1px;
