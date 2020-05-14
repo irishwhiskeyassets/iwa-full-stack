@@ -675,18 +675,16 @@ h5{
     display:grid;
     width: 100%;
     min-height: 30vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    gap: 1px 1px;
+    grid-template-areas: "left right";
     background:var(--secondary-color);
 }
 
 .left {
-  grid-area: 1 / 1 / 2 / 2;
-  display: flex;
+  grid-area: left;
   justify-content: center;
   align-items: center;
   background-color : #fff7e3;
@@ -696,8 +694,7 @@ h5{
   vertical-align : middle;
 }
 .right {
-  grid-area: 1 / 2 / 2 / 3;
-  display: flex;
+  grid-area: right;
   justify-content: center;
   align-items: center;
   background-color : #fff7e3;
