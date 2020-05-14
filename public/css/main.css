@@ -671,10 +671,10 @@ h5{
 
 /* Home bottom cta */
 
-.home-bottom-cta{
+.home-cta-split{
     display:grid;
     width: 100%;
-    min-height: 50vh;
+    min-height: 30vh;
     overflow-x: hidden;
     overflow-y: hidden;
     grid-template-columns: repeat(2, 1fr);
