@@ -673,8 +673,6 @@ h5{
 
 .home-bottom-cta{
     display:grid;
-    justify-content: center;
-    align-items:center;
     overflow-x: hidden;
     overflow-y: hidden;
     grid-template-columns: repeat(2, 1fr);
